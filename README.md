@@ -15,13 +15,18 @@ Due to the nature of how Primo updates the page title, a couple alternatives hav
 1. Copy the contents of `multipleAnalytics.module.js` into your package's `custom.js` file.
 
 ## Usage
-Once this module is installed, add `multipleAnalytics` as a dependency for your custom module definition.
+Once this module is installed, add `multipleAnalytics` as a dependency in your custom module definition.
 
 ```js
 var app = angular.module('viewCustom', ['multipleAnalytics'])
 ```
 
-### Configuration
+#### Configuration
+The module can be configured using the `analyticsOptions` option object.  
+Default options are provided in a 'Default' variant of the option object, as shown below. _Only override the non-default object_
+
+##### analyticsOptions / analyticsOptionsDefault
+
 | name           | type         | usage                                                                                 |
 |----------------|--------------|---------------------------------------------------------------------------------------|
 | `enabled`      | string       | Provided for consortium implementations. Single institutions should leave this `true` |
@@ -30,13 +35,10 @@ var app = angular.module('viewCustom', ['multipleAnalytics'])
 | `siteUrl`      | string (url) | The URL pointing to where the analytics files live on your library website            |
 | `defaultTitle` | string       | The default page title to use when `document.title` returns an empty string           |
 
-#### Example
+### Example
 ```js
 app.value('analyticsOptions', {
     enabled: true,
-    siteSource: 'ga',
-    siteId: 'UA-012345678-1',
-    siteUrl: '',
-    defaultTitle: 'Discovery Search'
+    siteId: 'UA-012345678-1'
 });
 ```
