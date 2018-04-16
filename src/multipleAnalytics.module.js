@@ -69,7 +69,7 @@ angular.module('multipleAnalytics').run(function ($rootScope, $interval, analyti
 });
 angular.module('multipleAnalytics').value('analyticsOptions', {}).value('analyticsOptionsDefault', {
 	enabled: false,
-	siteSource: '',
+	siteSource: 'ga',
 	siteId: '',
 	siteUrl: 'https://www.google-analytics.com/analytics.js',
 	defaultTitle: 'Discovery Search'
